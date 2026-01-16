@@ -29,7 +29,7 @@ const auth = require("./middleware/authMiddleware");
 
 app.get("/api/dashboard", auth, (req, res) => {
   res.json({
-    msg: "Welcome to CampusHub ",
+    msg: "Welcome to CampusHub dashboard",
     userId: req.user.id,
   });
 });
