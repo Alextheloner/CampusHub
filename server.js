@@ -14,6 +14,7 @@ app.use(express.json());
 
 // Routes
 app.use("/api/auth", require("./Routes/auth"));
+app.use("/api/timetable", require("./Routes/timetable"));
 
 app.get("/", (req, res) => {
   res.send("CampusHub API running...");
@@ -32,4 +33,12 @@ app.get("/api/dashboard", auth, (req, res) => {
     msg: "Welcome to CampusHub dashboard",
     userId: req.user.id,
   });
+});
+
+// test route to get all users
+const User = require("./models/user");
+
+app.get("/api/test-users", async (req, res) => {
+  const users = await User.find();
+  res.json(users);
 });

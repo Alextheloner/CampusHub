@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="light" lang="en">
   <head>
     <meta charset="utf-8" />
@@ -42,7 +42,11 @@
     <!-- Material Symbols icon custom style -->
     <style>
       .material-symbols-outlined {
-        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
       }
     </style>
   </head>
@@ -168,10 +172,23 @@
             </div>
             <!-- User Actions: Logout, Profile Avatar (mobile) -->
             <div class="flex flex-1 justify-end gap-4">
-              <button
+              <button id="logoutBtn"
                 class="flex size-10 items-center justify-center rounded-full text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
               >
                 <span class="material-symbols-outlined">logout</span>
+              </button>
+              <!-- darkmode -->
+              <button id="theme-toggle" type="button" class="theme-btn">
+                <span
+                  id="theme-toggle-light-icon"
+                  class="material-symbols-outlined hidden text-primary"
+                  >light_mode</span
+                >
+                <span
+                  id="theme-toggle-dark-icon"
+                  class="material-symbols-outlined hidden text-primary"
+                  >dark_mode</span
+                >
               </button>
               <!-- <div
                 class="aspect-square size-10 rounded-full bg-cover bg-center bg-no-repeat md:hidden"
@@ -311,7 +328,8 @@
                     Monday
                   </div>
                   <!-- Classes for Monday -->
-                  <div id="day-monday"
+                  <div
+                    id="day-monday"
                     class="min-h-[200px] flex-1 space-y-3 bg-background-light p-3 dark:bg-background-dark/50"
                   >
                     <div
@@ -327,7 +345,7 @@
                               >edit</span
                             >
                           </button>
-                          <button 
+                          <button
                             class="text-green-600 hover:text-green-800 dark:text-green-300 dark:hover:text-green-100"
                           >
                             <span class="material-symbols-outlined text-base"
@@ -343,22 +361,24 @@
                   </div>
                 </div>
                 <!-- Repeat for Tuesday - Friday -->
-                <div
+               <div
                   class="flex flex-col border-b md:border-b-0 md:border-r dark:border-gray-800"
                 >
                   <div
                     class="border-b bg-white p-4 text-center font-bold text-gray-800 dark:border-gray-800 dark:bg-gray-900 dark:text-white"
                   >
-                    Tuesday
+                    Monday
                   </div>
+                  <!-- Classes for Monday -->
                   <div
+                    id="day-monday"
                     class="min-h-[200px] flex-1 space-y-3 bg-background-light p-3 dark:bg-background-dark/50"
                   >
                     <div
                       class="rounded-lg border border-green-200 bg-green-100 p-3 text-sm text-green-800 shadow-sm transition-transform hover:-translate-y-1 dark:border-green-900 dark:bg-green-950 dark:text-green-200"
                     >
                       <div class="flex items-start justify-between">
-                        <h3 class="font-bold">Intro to CS</h3>
+                        <h3 class="font-bold"></h3>
                         <div class="flex gap-1">
                           <button
                             class="text-green-600 hover:text-green-800 dark:text-green-300 dark:hover:text-green-100"
@@ -376,13 +396,135 @@
                           </button>
                         </div>
                       </div>
-                      <p class="text-xs">11:00 AM - 12:30 PM</p>
-                      <p class="mt-1 text-xs">CompSci, Lab 2</p>
+                      <p class="text-xs"></p>
+                      <p class="mt-1 text-xs"></p>
                     </div>
+                    <!-- Add more Monday classes here -->
                   </div>
                 </div>
-                <!-- Wednesday, Thursday, Friday columns follow same structure -->
-                <!-- ... -->
+                <div
+                  class="flex flex-col border-b md:border-b-0 md:border-r dark:border-gray-800"
+                >
+                  <div
+                    class="border-b bg-white p-4 text-center font-bold text-gray-800 dark:border-gray-800 dark:bg-gray-900 dark:text-white"
+                  >
+                    Wednesday
+                  </div>
+                  <!-- Classes for Wednesday -->
+                  <div
+                    id="day-wednesday"
+                    class="min-h-[200px] flex-1 space-y-3 bg-background-light p-3 dark:bg-background-dark/50"
+                  >
+                    <div
+                      class="rounded-lg border border-green-200 bg-green-100 p-3 text-sm text-green-800 shadow-sm transition-transform hover:-translate-y-1 dark:border-green-900 dark:bg-green-950 dark:text-green-200"
+                    >
+                      <div class="flex items-start justify-between">
+                        <h3 class="font-bold"></h3>
+                        <div class="flex gap-1">
+                          <button
+                            class="text-green-600 hover:text-green-800 dark:text-green-300 dark:hover:text-green-100"
+                          >
+                            <span class="material-symbols-outlined text-base"
+                              >edit</span
+                            >
+                          </button>
+                          <button
+                            class="text-green-600 hover:text-green-800 dark:text-green-300 dark:hover:text-green-100"
+                          >
+                            <span class="material-symbols-outlined text-base"
+                              >delete</span
+                            >
+                          </button>
+                        </div>
+                      </div>
+                      <p class="text-xs"></p>
+                      <p class="mt-1 text-xs"></p>
+                    </div>
+                    <!-- Add more Wednesday classes here -->
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col border-b md:border-b-0 md:border-r dark:border-gray-800"
+                >
+                  <div
+                    class="border-b bg-white p-4 text-center font-bold text-gray-800 dark:border-gray-800 dark:bg-gray-900 dark:text-white"
+                  >
+                    Thursday
+                  </div>
+                  <!-- Classes for Thursday -->
+                  <div
+                    id="day-thursday"
+                    class="min-h-[200px] flex-1 space-y-3 bg-background-light p-3 dark:bg-background-dark/50"
+                  >
+                    <div
+                      class="rounded-lg border border-green-200 bg-green-100 p-3 text-sm text-green-800 shadow-sm transition-transform hover:-translate-y-1 dark:border-green-900 dark:bg-green-950 dark:text-green-200"
+                    >
+                      <div class="flex items-start justify-between">
+                        <h3 class="font-bold"></h3>
+                        <div class="flex gap-1">
+                          <button
+                            class="text-green-600 hover:text-green-800 dark:text-green-300 dark:hover:text-green-100"
+                          >
+                            <span class="material-symbols-outlined text-base"
+                              >edit</span
+                            >
+                          </button>
+                          <button
+                            class="text-green-600 hover:text-green-800 dark:text-green-300 dark:hover:text-green-100"
+                          >
+                            <span class="material-symbols-outlined text-base"
+                              >delete</span
+                            >
+                          </button>
+                        </div>
+                      </div>
+                      <p class="text-xs"></p>
+                      <p class="mt-1 text-xs"></p>
+                    </div>
+                    <!-- Add more Thursday classes here -->
+                  </div>
+                </div>
+                <div
+                  class="flex flex-col border-b md:border-b-0 md:border-r dark:border-gray-800"
+                >
+                  <div
+                    class="border-b bg-white p-4 text-center font-bold text-gray-800 dark:border-gray-800 dark:bg-gray-900 dark:text-white"
+                  >
+                    Friday
+                  </div>
+                  <!-- Classes for Friday -->
+                  <div
+                    id="day-friday"
+                    class="min-h-[200px] flex-1 space-y-3 bg-background-light p-3 dark:bg-background-dark/50"
+                  >
+                    <div
+                      class="rounded-lg border border-green-200 bg-green-100 p-3 text-sm text-green-800 shadow-sm transition-transform hover:-translate-y-1 dark:border-green-900 dark:bg-green-950 dark:text-green-200"
+                    >
+                      <div class="flex items-start justify-between">
+                        <h3 class="font-bold"></h3>
+                        <div class="flex gap-1">
+                          <button
+                            class="text-green-600 hover:text-green-800 dark:text-green-300 dark:hover:text-green-100"
+                          >
+                            <span class="material-symbols-outlined text-base"
+                              >edit</span
+                            >
+                          </button>
+                          <button
+                            class="text-green-600 hover:text-green-800 dark:text-green-300 dark:hover:text-green-100"
+                          >
+                            <span class="material-symbols-outlined text-base"
+                              >delete</span
+                            >
+                          </button>
+                        </div>
+                      </div>
+                      <p class="text-xs"></p>
+                      <p class="mt-1 text-xs"></p>
+                    </div>
+                    <!-- Add more Friday classes here -->
+                  </div>
+                </div>
               </div>
               <!-- Timetable Success and Error Alerts -->
               <div class="mt-8 space-y-4">
@@ -433,5 +575,7 @@
         </div>
       </div>
     </div>
+    <script src="/js/timetable.js"></script>
+    <script src="/js/script.js"></script>
   </body>
 </html>
