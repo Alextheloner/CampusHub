@@ -11,14 +11,18 @@ connectDB();
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use(express.static("public"));
 
 // Routes
 app.use("/api/auth", require("./Routes/auth"));
 app.use("/api/timetable", require("./Routes/timetable"));
 app.use("/api/announcements", require("./Routes/announcement"));
 
+// Serve static files from public directory
+// API routes are handled above, static files (HTML/CSS/JS) are served from public/
+
 app.get("/", (req, res) => {
-  res.send("CampusHub API running...");
+  res.sendFile(__dirname + "/public/index.html");
 });
 
 // Start server
@@ -27,7 +31,7 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-const auth = require("./middleware/authMiddleware");
+const auth = require("./middleware/authmiddleware");
 
 app.get("/api/dashboard", auth, (req, res) => {
   res.json({

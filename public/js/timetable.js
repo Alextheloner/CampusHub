@@ -5,13 +5,13 @@ const startTimeInput = document.getElementById("start-time");
 const endTimeInput = document.getElementById("end-time");
 const locationInput = document.getElementById("location");
 
-const API_URL = "http://localhost:5000/api/timetable"; // change if different
+const API_URL = "/api/timetable";
 const token = localStorage.getItem("campusHubToken");
 
 //  redirect if not logged in
 if (!token) {
   alert("Please login again");
-  window.location.href = "/html/login.html";
+  window.location.href = "/login.html";
 }
 
 // Load timetable on page load

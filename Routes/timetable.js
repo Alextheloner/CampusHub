@@ -1,6 +1,6 @@
 const express = require("express");
 const Timetable = require("../models/timetable");
-const auth = require("../middleware/authMiddleware");
+const auth = require("../middleware/authmiddleware");
 
 const router = express.Router();
 

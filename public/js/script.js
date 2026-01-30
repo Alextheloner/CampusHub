@@ -49,19 +49,19 @@ document.addEventListener("DOMContentLoaded", function () {
 const signupBtn = document.getElementById("signupBtn");
 if (signupBtn) {
   signupBtn.onclick = function () {
-    window.location.href = "/html/signup.html"; // or './signup.html' depending on your folder
+    window.location.href = "/signup.html"; // or './signup.html' depending on your folder
   };
 }
 // Login button redirect
 const loginBtn = document.getElementById("loginBtn");
 if (loginBtn) {
   loginBtn.onclick = function () {
-    window.location.href = "/html/login.html"; // or './login.html'
+    window.location.href = "/login.html"; // or './login.html'
   };
 }
 
 // Logout button
 document.getElementById("logoutBtn").addEventListener("click", () => {
     localStorage.removeItem("campusHubToken");
-    window.location.href = "/html/login.html";
+    window.location.href = "/login.html";
   });
