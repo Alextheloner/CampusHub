@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/announcements";
+const API_URL = "/api/announcements";
 const container = document.getElementById("announcementsContainer");
 const addBtn = document.getElementById("addAnnouncementBtn");
 
