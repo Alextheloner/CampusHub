@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 const connectDB = require("./config/db");
+// const resourcesRoutes = require("./Routes/resources");
 
 const app = express();
 
@@ -11,11 +12,15 @@ connectDB();
 // Middleware
 app.use(cors());
 app.use(express.json());
+app.use("/uploads", express.static("uploads"));
 
 // Routes
 app.use("/api/auth", require("./Routes/auth"));
 app.use("/api/timetable", require("./Routes/timetable"));
 app.use("/api/announcements", require("./Routes/announcement"));
+// app.use("/api/resources", require("./Routes/resources"));
+
+
 
 app.get("/", (req, res) => {
   res.send("CampusHub API running...");
